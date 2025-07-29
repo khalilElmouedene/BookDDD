@@ -72,9 +72,7 @@ Each layer respects Clean Architecture principles with inward dependencies and s
 
 ## 📚 Resources
 
-- [Medium Article by Kevin Enan](https://medium.com/@kevinenan/mise-en-%C5%93uvre-de-ddd-et-cqrs-dans-une-clean-architecture-monolithique-avec-asp-net-core-5-80559cc04dfc)
 - [Clean Architecture by Jason Taylor](https://github.com/jasontaylordev/CleanArchitecture)
-- [CQRS with MediatR in ASP.NET Core](https://code-maze.com/cqrs-mediatr-in-aspnet-core/)
 - [Microsoft Docs - DDD and CQRS](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/)
 
 ---
