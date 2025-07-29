@@ -1,0 +1,31 @@
+﻿using BookDDD.Application.Contracts;
+using BookDDD.Core.Entities;
+using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace BookDDD.Application.Features.Posts.Commands.DeletePost
+{
+    public class DeletePostCommandHandler : IRequestHandler<DeletePostCommand, string>
+    {
+        private readonly IRepository<Post> _postRepository;
+
+        public DeletePostCommandHandler(IRepository<Post> postRepository)
+        {
+            _postRepository = postRepository;
+        }
+
+        public async Task<string> Handle(DeletePostCommand request, CancellationToken cancellationToken)
+        {
+            var item = await _postRepository.GetByIdAsync(request.Id);
+            if (item == null) throw new Exception("Aucune Element avec ce id");
+            item.DeletePost(item.Id, "Remove");
+            await _postRepository.UpdateAsync(item);
+            return "Suppression avec success";
+        }
+    }
+}
